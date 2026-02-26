@@ -1,0 +1,283 @@
+2026-02-25T18:04:40.570509Z (1) info: starting jupyter kernel
+2026-02-25T18:04:40.599562Z (1) debug: read /Users/stephenroe/Library/Jupyter/runtime/kernel-ac3434f9-c65b-4573-b49f-6635c5d7a0d7.json
+2026-02-25T18:04:40.600623Z (1) debug: listening on tcp://127.0.0.1
+2026-02-25T18:04:40.601921Z (1) debug: setting up control on 62190
+2026-02-25T18:04:40.675624Z (1) debug: setting up shell on 62186
+2026-02-25T18:04:40.681897Z (1) debug: setting up iopub on 62187
+2026-02-25T18:04:40.682814Z (1) debug: setting up hb on 62189
+2026-02-25T18:04:40.904490Z (10) info: iopub: sending execute_input message
+2026-02-25T18:04:40.963112Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T18:04:40.963629Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T18:04:40.972325Z (10) info: iopub: sending status message
+2026-02-25T18:04:41.068072Z (8) debug: ctl got a message: kernel_info_request
+2026-02-25T18:04:41.069428Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T18:04:41.069646Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T18:04:41.075271Z (8) debug: ctl got a message: kernel_info_request
+2026-02-25T18:04:41.078995Z (10) info: iopub: sending status message
+2026-02-25T18:04:41.080532Z (8) debug: ctl got a message: kernel_info_request
+2026-02-25T18:04:41.086081Z (8) debug: ctl got a message: kernel_info_request
+2026-02-25T18:04:41.089710Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T18:04:41.089959Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T18:04:41.100486Z (10) info: iopub: sending status message
+2026-02-25T18:04:41.117875Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T18:04:41.118117Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T18:04:41.124563Z (10) info: iopub: sending status message
+2026-02-25T18:04:41.136362Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T18:04:41.136630Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T18:04:41.142910Z (10) info: iopub: sending status message
+2026-02-25T18:04:41.153878Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T18:04:41.154119Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T18:04:41.161118Z (10) info: iopub: sending status message
+2026-02-25T18:04:41.171954Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T18:04:41.172210Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T18:04:41.179092Z (10) info: iopub: sending status message
+2026-02-25T18:04:41.198195Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T18:04:41.198447Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T18:04:41.207643Z (10) info: iopub: sending status message
+2026-02-25T18:04:41.217685Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T18:04:41.217931Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T18:04:41.224436Z (10) info: iopub: sending status message
+2026-02-25T18:04:41.971120Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T18:04:41.971119Z (8) debug: ctl got a message: kernel_info_request
+2026-02-25T18:04:41.971396Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T18:04:41.976930Z (10) info: iopub: sending status message
+2026-02-25T18:04:41.988616Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T18:04:41.988853Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T18:04:41.997239Z (10) info: iopub: sending status message
+2026-02-25T18:04:42.014871Z (10) debug: shell got a message: history_request
+2026-02-25T18:04:42.015953Z (10) info: opening history file /Users/stephenroe/Library/Jupyter/kernels/raku/history.json
+2026-02-25T18:04:42.029735Z (10) info: shell: sending history_reply message
+2026-02-25T18:04:50.763968Z (10) debug: shell got a message: execute_request
+2026-02-25T18:04:50.765533Z (10) info: iopub: sending status message
+2026-02-25T18:04:50.807931Z (10) info: iopub: sending execute_input message
+2026-02-25T18:04:50.814063Z (10) info: iopub: sending execute_result message
+2026-02-25T18:04:50.819789Z (10) info: iopub: sending status message
+2026-02-25T18:04:50.836829Z (10) info: shell: sending execute_reply message
+2026-02-25T21:08:25.547859Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:08:25.547858Z (8) debug: ctl got a message: kernel_info_request
+2026-02-25T21:08:25.550921Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:08:25.567619Z (10) info: iopub: sending status message
+2026-02-25T21:08:25.626315Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:08:25.626550Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:08:25.632525Z (10) info: iopub: sending status message
+2026-02-25T21:08:37.481427Z (8) debug: ctl got a message: kernel_info_request
+2026-02-25T21:08:37.482053Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:08:37.483753Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:08:37.491203Z (10) info: iopub: sending status message
+2026-02-25T21:08:37.833704Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:08:37.834141Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:08:37.841206Z (10) info: iopub: sending status message
+2026-02-25T21:08:40.021028Z (1) info: starting jupyter kernel
+2026-02-25T21:08:40.028189Z (1) debug: read /Users/stephenroe/Library/Jupyter/runtime/kernel-37f89ed0-c4ef-487d-abb0-42501a61ff62.json
+2026-02-25T21:08:40.028412Z (1) debug: listening on tcp://127.0.0.1
+2026-02-25T21:08:40.028922Z (1) debug: setting up control on 62612
+2026-02-25T21:08:40.104609Z (1) debug: setting up shell on 62608
+2026-02-25T21:08:40.105439Z (1) debug: setting up iopub on 62609
+2026-02-25T21:08:40.106017Z (1) debug: setting up hb on 62611
+2026-02-25T21:08:40.305023Z (10) info: iopub: sending execute_input message
+2026-02-25T21:08:40.360066Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:08:40.360629Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:08:40.372903Z (10) info: iopub: sending status message
+2026-02-25T21:08:40.392189Z (4) debug: ctl got a message: kernel_info_request
+2026-02-25T21:08:40.393643Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:08:40.393995Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:08:40.404019Z (10) info: iopub: sending status message
+2026-02-25T21:08:40.417995Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:08:40.418249Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:08:40.427495Z (10) info: iopub: sending status message
+2026-02-25T21:08:40.456619Z (10) debug: shell got a message: history_request
+2026-02-25T21:08:40.462192Z (10) info: opening history file /Users/stephenroe/Library/Jupyter/kernels/raku/history.json
+2026-02-25T21:08:40.557823Z (10) info: shell: sending history_reply message
+2026-02-25T21:09:05.930460Z (9) info: Got sigint
+2026-02-25T21:09:05.934249Z (9) info: iopub: sending stream message
+2026-02-25T21:09:05.947542Z (4) debug: ctl got a message: shutdown_request
+2026-02-25T21:09:05.948684Z (4) info: Exiting
+
+2026-02-25T21:09:05.952050Z (11) info: iopub: sending stream message
+2026-02-25T21:09:05.961927Z (11) info: control: sending shutdown_reply message
+2026-02-25T21:09:10.044127Z (8) debug: ctl got a message: kernel_info_request
+2026-02-25T21:09:10.044015Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:09:10.044900Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:09:10.054672Z (10) info: iopub: sending status message
+2026-02-25T21:09:10.393828Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:09:10.394160Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:09:10.401458Z (10) info: iopub: sending status message
+2026-02-25T21:09:12.361153Z (1) info: starting jupyter kernel
+2026-02-25T21:09:12.368793Z (1) debug: read /Users/stephenroe/Library/Jupyter/runtime/kernel-cca73ccf-6fc6-409e-913b-d63cca8a3ee1.json
+2026-02-25T21:09:12.369014Z (1) debug: listening on tcp://127.0.0.1
+2026-02-25T21:09:12.369594Z (1) debug: setting up control on 63048
+2026-02-25T21:09:12.378843Z (1) debug: setting up shell on 63044
+2026-02-25T21:09:12.379202Z (1) debug: setting up iopub on 63045
+2026-02-25T21:09:12.381411Z (1) debug: setting up hb on 63047
+2026-02-25T21:09:12.487313Z (10) info: iopub: sending execute_input message
+2026-02-25T21:09:12.522007Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:09:12.522495Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:09:12.532527Z (10) info: iopub: sending status message
+2026-02-25T21:09:12.544010Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:09:12.544249Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:09:12.544324Z (4) debug: ctl got a message: kernel_info_request
+2026-02-25T21:09:12.552749Z (10) info: iopub: sending status message
+2026-02-25T21:09:12.563460Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:09:12.563699Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:09:12.571925Z (10) info: iopub: sending status message
+2026-02-25T21:09:12.588487Z (10) debug: shell got a message: history_request
+2026-02-25T21:09:12.589986Z (10) info: opening history file /Users/stephenroe/Library/Jupyter/kernels/raku/history.json
+2026-02-25T21:09:12.605685Z (10) info: shell: sending history_reply message
+2026-02-25T21:09:26.796786Z (9) info: Got sigint
+2026-02-25T21:09:26.799954Z (9) info: iopub: sending stream message
+2026-02-25T21:09:26.814385Z (4) debug: ctl got a message: shutdown_request
+2026-02-25T21:09:26.816281Z (4) info: Exiting
+
+2026-02-25T21:09:26.823956Z (11) info: iopub: sending stream message
+2026-02-25T21:09:26.833539Z (11) info: control: sending shutdown_reply message
+2026-02-25T21:09:33.525474Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:09:33.525474Z (8) debug: ctl got a message: kernel_info_request
+2026-02-25T21:09:33.526596Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:09:33.558347Z (10) info: iopub: sending status message
+2026-02-25T21:09:33.989816Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:09:33.990068Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:09:34.007749Z (10) info: iopub: sending status message
+2026-02-25T21:09:35.715299Z (1) info: starting jupyter kernel
+2026-02-25T21:09:35.722064Z (1) debug: read /Users/stephenroe/Library/Jupyter/runtime/kernel-a566039c-c2c8-49d8-9e61-4b7304d5039a.json
+2026-02-25T21:09:35.722285Z (1) debug: listening on tcp://127.0.0.1
+2026-02-25T21:09:35.724454Z (1) debug: setting up control on 63345
+2026-02-25T21:09:35.732964Z (1) debug: setting up shell on 63339
+2026-02-25T21:09:35.733310Z (1) debug: setting up iopub on 63340
+2026-02-25T21:09:35.733534Z (1) debug: setting up hb on 63343
+2026-02-25T21:09:35.842308Z (10) info: iopub: sending execute_input message
+2026-02-25T21:09:35.908616Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:09:35.909243Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:09:35.919977Z (10) info: iopub: sending status message
+2026-02-25T21:09:35.926914Z (4) debug: ctl got a message: kernel_info_request
+2026-02-25T21:09:35.929263Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:09:35.929402Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:09:35.936726Z (10) info: iopub: sending status message
+2026-02-25T21:09:35.945141Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:09:35.945337Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:09:35.952575Z (10) info: iopub: sending status message
+2026-02-25T21:09:35.968357Z (10) debug: shell got a message: history_request
+2026-02-25T21:09:35.969643Z (10) info: opening history file /Users/stephenroe/Library/Jupyter/kernels/raku/history.json
+2026-02-25T21:09:35.987340Z (10) info: shell: sending history_reply message
+2026-02-25T21:10:11.346679Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:10:11.347124Z (4) debug: ctl got a message: kernel_info_request
+2026-02-25T21:10:11.347724Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:10:11.348719Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:10:11.348717Z (8) debug: ctl got a message: kernel_info_request
+2026-02-25T21:10:11.350049Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:10:11.362298Z (10) info: iopub: sending status message
+2026-02-25T21:10:11.378793Z (10) info: iopub: sending status message
+2026-02-25T21:10:11.688657Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:10:11.688926Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:10:11.695783Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:10:11.696096Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:10:11.701837Z (10) info: iopub: sending status message
+2026-02-25T21:10:11.702613Z (10) info: iopub: sending status message
+2026-02-25T21:10:13.836138Z (1) info: starting jupyter kernel
+2026-02-25T21:10:13.842914Z (1) debug: read /Users/stephenroe/Library/Jupyter/runtime/kernel-08b5e9de-9f30-4c11-8406-d3c5e5690198.json
+2026-02-25T21:10:13.843145Z (1) debug: listening on tcp://127.0.0.1
+2026-02-25T21:10:13.843706Z (1) debug: setting up control on 63908
+2026-02-25T21:10:13.855309Z (1) debug: setting up shell on 63904
+2026-02-25T21:10:13.855689Z (1) debug: setting up iopub on 63905
+2026-02-25T21:10:13.855911Z (1) debug: setting up hb on 63907
+2026-02-25T21:10:13.964869Z (10) info: iopub: sending execute_input message
+2026-02-25T21:10:13.998638Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:10:13.999105Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:10:14.009751Z (10) info: iopub: sending status message
+2026-02-25T21:10:14.019826Z (8) debug: ctl got a message: kernel_info_request
+2026-02-25T21:10:14.021606Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:10:14.021753Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:10:14.027545Z (10) info: iopub: sending status message
+2026-02-25T21:10:14.038183Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:10:14.038402Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:10:14.044221Z (10) info: iopub: sending status message
+2026-02-25T21:10:14.056598Z (10) debug: shell got a message: history_request
+2026-02-25T21:10:14.057688Z (10) info: opening history file /Users/stephenroe/Library/Jupyter/kernels/raku/history.json
+2026-02-25T21:10:14.071169Z (10) info: shell: sending history_reply message
+2026-02-25T21:10:35.783531Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:10:35.783729Z (8) debug: ctl got a message: kernel_info_request
+2026-02-25T21:10:35.787181Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:10:35.837134Z (4) debug: ctl got a message: kernel_info_request
+2026-02-25T21:10:35.837134Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:10:35.839127Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:10:35.840851Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:10:35.842745Z (10) info: iopub: sending status message
+2026-02-25T21:10:35.840855Z (8) debug: ctl got a message: kernel_info_request
+2026-02-25T21:10:35.842641Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:10:35.852397Z (10) info: iopub: sending status message
+2026-02-25T21:10:35.854305Z (10) info: iopub: sending status message
+2026-02-25T21:10:36.152921Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:10:36.153189Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:10:36.155169Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:10:36.155672Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:10:36.159260Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:10:36.159545Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:10:36.169621Z (10) info: iopub: sending status message
+2026-02-25T21:10:36.171419Z (10) info: iopub: sending status message
+2026-02-25T21:10:36.173056Z (10) info: iopub: sending status message
+2026-02-25T21:10:37.964977Z (1) info: starting jupyter kernel
+2026-02-25T21:10:37.972392Z (1) debug: read /Users/stephenroe/Library/Jupyter/runtime/kernel-12024121-6136-4465-afa5-d3151f4289fb.json
+2026-02-25T21:10:37.972597Z (1) debug: listening on tcp://127.0.0.1
+2026-02-25T21:10:37.974967Z (1) debug: setting up control on 64449
+2026-02-25T21:10:37.982282Z (1) debug: setting up shell on 64445
+2026-02-25T21:10:37.982682Z (1) debug: setting up iopub on 64446
+2026-02-25T21:10:37.982914Z (1) debug: setting up hb on 64448
+2026-02-25T21:10:38.084009Z (10) info: iopub: sending execute_input message
+2026-02-25T21:10:38.117561Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:10:38.118031Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:10:38.127659Z (10) info: iopub: sending status message
+2026-02-25T21:10:38.135881Z (4) debug: ctl got a message: kernel_info_request
+2026-02-25T21:10:38.138467Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:10:38.138738Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:10:38.146443Z (10) info: iopub: sending status message
+2026-02-25T21:10:38.156364Z (10) debug: shell got a message: kernel_info_request
+2026-02-25T21:10:38.156592Z (10) info: shell: sending kernel_info_reply message
+2026-02-25T21:10:38.163299Z (10) info: iopub: sending status message
+2026-02-25T21:10:38.173496Z (10) debug: shell got a message: history_request
+2026-02-25T21:10:38.174586Z (10) info: opening history file /Users/stephenroe/Library/Jupyter/kernels/raku/history.json
+2026-02-25T21:10:38.188292Z (10) info: shell: sending history_reply message
+2026-02-25T21:12:42.876909Z (10) debug: shell got a message: execute_request
+2026-02-25T21:12:42.879378Z (10) info: iopub: sending status message
+2026-02-25T21:12:43.013515Z (11) info: iopub: sending execute_input message
+2026-02-25T21:12:43.021402Z (11) info: iopub: sending execute_result message
+2026-02-25T21:12:43.026008Z (11) info: iopub: sending status message
+2026-02-25T21:12:43.031355Z (11) info: shell: sending execute_reply message
+2026-02-25T21:12:52.021997Z (11) debug: shell got a message: execute_request
+2026-02-25T21:12:52.022302Z (11) info: iopub: sending status message
+2026-02-25T21:12:54.032335Z (10) info: iopub: sending execute_input message
+2026-02-25T21:12:54.040351Z (10) info: iopub: sending execute_result message
+2026-02-25T21:12:54.050707Z (10) info: iopub: sending status message
+2026-02-25T21:12:54.057385Z (10) info: shell: sending execute_reply message
+2026-02-25T21:14:36.105990Z (10) debug: shell got a message: execute_request
+2026-02-25T21:14:36.111106Z (10) info: iopub: sending status message
+2026-02-25T21:14:37.872693Z (10) info: iopub: sending execute_input message
+2026-02-25T21:14:37.877795Z (10) info: iopub: sending execute_result message
+2026-02-25T21:14:37.884032Z (10) info: iopub: sending status message
+2026-02-25T21:14:37.896023Z (11) info: shell: sending execute_reply message
+2026-02-25T22:26:42.613885Z (9) info: Got sigint
+2026-02-25T22:26:42.613719Z (9) info: Got sigint
+2026-02-25T22:26:42.618705Z (9) info: iopub: sending stream message
+2026-02-25T22:26:42.616290Z (9) info: Got sigint
+2026-02-25T22:26:42.622161Z (9) info: iopub: sending stream message
+2026-02-25T22:26:42.621099Z (9) info: iopub: sending stream message
+2026-02-25T22:26:42.633864Z (9) info: Got sigint
+2026-02-25T22:26:42.636172Z (4) debug: ctl got a message: shutdown_request
+2026-02-25T22:26:42.638898Z (4) info: Exiting
+
+2026-02-25T22:26:42.639002Z (9) info: iopub: sending stream message
+2026-02-25T22:26:42.647534Z (8) debug: ctl got a message: shutdown_request
+2026-02-25T22:26:42.648180Z (4) debug: ctl got a message: shutdown_request
+2026-02-25T22:26:42.649540Z (8) info: Exiting
+
+2026-02-25T22:26:42.653102Z (4) info: Exiting
+
+2026-02-25T22:26:42.656888Z (8) debug: ctl got a message: shutdown_request
+2026-02-25T22:26:42.657157Z (4) info: iopub: sending stream message
+2026-02-25T22:26:42.659039Z (8) info: Exiting
+
+2026-02-25T22:26:42.659557Z (11) info: iopub: sending stream message
+2026-02-25T22:26:42.661970Z (8) info: iopub: sending stream message
+2026-02-25T22:26:42.669077Z (4) info: control: sending shutdown_reply message
+2026-02-25T22:26:42.674193Z (8) info: control: sending shutdown_reply message
+2026-02-25T22:26:42.674837Z (11) info: control: sending shutdown_reply message
+2026-02-25T22:26:42.678334Z (11) info: iopub: sending stream message
+2026-02-25T22:26:42.691501Z (11) info: control: sending shutdown_reply message

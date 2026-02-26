@@ -3,7 +3,7 @@ asciinema rec  -q -i 1 demoN.cast --overwrite
 asciinema play -q -s 2 demoN.cast
 
 
-#Basics (?)
+#Basics
 > crag '0.1+0.2'    #command line
 > crag --help       #help
 > crag              #interactive

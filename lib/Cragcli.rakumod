@@ -4,7 +4,7 @@ use Air::Functional :BASE;
 use Air::Base;
 use Air::Plugin::Asciinema;
 
-my $github = external :href<https://github.com/librasteve/raku-App-Crag>;
+my $source = external :href<https://github.com/librasteve/raku-App-Crag>;
 
 sub code-note($s) {
     p( :style('font-size:small; text-align:right'), em("...$s") )
@@ -14,7 +14,7 @@ sub vignette(*@a, *%h) {
 }
 
 my &index = &page.assuming( #:REFRESH(15),
-    title => 'Crag CLI',
+    title => 'CragCLI',
     description => 'Command line Calculator using Raku Grammars',
 
     nav => nav(
@@ -23,10 +23,10 @@ my &index = &page.assuming( #:REFRESH(15),
                 a( :href<https://cragcli.info>, :target<_self>, :style("display: flex; align-items: center; gap: 0.5rem; text-decoration: none;"),
                 [
                     img( :src</img/IMG_0159_mid.png>, :width<80px> );
-                    p "Crag CLI";
+                    p "CragCLI";
                 ])
             ),
-        items   => [:$github],
+        items   => [:$source],
         widgets => [lightdark],
     ),
 
@@ -55,11 +55,12 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
         main [
             shadow;
             div :align<center>, [
-                h1 b 'Crag CLI: Command Line Calculator';
+                h1 b 'CragCLI: Command Line Calculator';
                 spacer;
             ];
 
             div [
+                p :style('margin-bottom: unset;'), b em 'the boring bits: ';
                 tabs [
                     Arithmetic => tab
                         vignette :direction<rtl>, [
@@ -68,7 +69,7 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
 
                                 As you would expect, all math operations are here.
 
-                                  - `+` add,`-` subtract, `*` multiple, `/` divide
+                                  - `+`add,`-`subtract, `*`multiply, `/`divide
                                   - `()` parentheses (bidmas precedence)
                                   - `-ve` numbers
                                   - `%` modulo operator
@@ -82,7 +83,7 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
                                 code-note 'starts in 1 second [note 1]';
                             ];
                             article [
-                                asciinema '/static/demos/demo1.cast';
+                                asciinema '/static/demos/demo-Arithmetic.cast';  #iamerejh
                             ];
                         ];
 
@@ -208,6 +209,7 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
             ];
 
             div [
+                p :style('margin-bottom: unset;'), b em 'the cool stuff: ';
                 tabs [
                     Random-Rounding => tab
                         vignette :direction, [
@@ -363,7 +365,8 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
                 Install and run App::Crag:
 
                   - `zef install App::Crag --/test`
-                  - `crag`
+                  - `crag '0.1+0.2'`  one-liner
+                  - `crag` interactive REPL
 
                 ---
 
@@ -377,10 +380,14 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
 
                 ## Notes
 
-                  - Note 1: Starts in approx. 1sec (as measured on an M1 MacBook, takes longer on first run).
+                  1. Starts in approx. 1sec (as measured on an M1 MacBook, takes longer on first run).
 
-                  - Note 2: For LLM::DWIM features, you will need e.g. a free of charge [Gemini App Key](https://ai.google.dev/gemini-api/docs/api-key) and go `export GEMINI_API_KEY=mykeygoeshere`.
+                  2. For LLM::DWIM features, you will need e.g. a free of charge [Gemini App Key](https://ai.google.dev/gemini-api/docs/api-key) and go `export GEMINI_API_KEY=mykeygoeshere`.
 
-                  - Note 3: Currency exchange rates are provided as at the installation date, reinstall crag (`zef install App::Crag --/test --force-install`) to refresh them.
+                  3. Currency exchange rates are provided as at the installation date, reinstall crag (`zef install App::Crag --/test --force-install`) to refresh them.
+
+                  4. crag is a full Raku repl - so you can write subroutines, loops, conditionals, comparisons and so on (see [https://docs.raku.org](https://docs.raku.org))
+
+                  5. If your calculations outgrow the crag app, use can use the underlying crag modules in Raku code.
                 MDEND
         ];

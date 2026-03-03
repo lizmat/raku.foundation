@@ -117,7 +117,7 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
                             article [ markdown q:to/END/;
                                 #### 3. Logarithms
 
-                                Logarithms are provided with exponential inverse.
+                                Logarithms and exponentials are provided.
 
                                   - `log10 x` base `10` logarithms
                                   - `log x` natural logarithms (base `e`)
@@ -158,13 +158,13 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
                             article [ markdown q:to/END/;
                                 #### 5. Complex
 
-                                A built-in number type that works with the operations and functions.
+                                A built-in number type.
 
                                   - `i` Imaginary
                                   - `3+4i` Complex
                                   - `.abs` absolute magnitude
 
-                                Use `i` represents square root of `-1`.
+                                `i` represents the square root of `-1`.
                                 END
                                 code-note 'polar coordinate transformations';
                             ];
@@ -287,47 +287,46 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
                             article [ markdown q:to/END/;
                                 #### 11. SI Units
 
-                                  - `42m` metres
-                                  - `10s` seconds
-                                  - `42cm` SI prefixes
-                                  - `80kg` kilograms
+                                Just write SI units naturally:
+
+                                  - `42m` metres, `10s` seconds and so on
+                                  - `42cm` SI prefixes `c`, `k`, etc too
                                   - `42m / 10s` speed in m/s (s=d/t)
                                   - `20kg * g` weight in N (F=ma)
-                                  - `$_ .in: 'lb'` conversion
-                                  - `$_ * 4m` energy in J (E=Fd)
+                                  - `20kg .in: 'lbm'` conversion
+                                  - `10N * 4m` energy in J (E=Fd)
                                   - `(10m~10%)+(5m~0.2)` error handling
 
-                                Both relative `%` and absolute error values can be specified with `~`.
+                                Both relative `%` and absolute error values can be specified using `~`.
                                 END
-                                code-note 'dimensional analysis checks';
+                                code-note 'consistent dimensional analysis';
                             ];
                             article [
                                 asciinema '/static/demos/demo-SIUnits.cast';
                             ];
                         ];
 
-                    Units => tab
+                    OtherUnits => tab
                         vignette :direction, [
                             article [ markdown q:to/END/;
-                                #### 12. Units (General)
+                                #### 12. Other Units
 
-                                General syntax is `^<value units [~error]>`.
+                                General syntax is `^<value units>`.
 
-                                  - `^<4 in ~10%>` general
-                                  - `^<4 ins>` plural
-                                  - `^<4 inch>` synonyms
+                                  - `^<4 in>` non-SI unit
+                                  - plurals & synonyms
                                   - `^<23:59:59>` time
                                   - `^<30º10'5">` angle (degrees)
                                   - `^<pi rad>` angle (radians)
                                   - `64Mib` data
-                                  - `US$ 25` currency
+                                  - `US$25`, `C$20`, `£15`, `10€` currency
 
                                 Special variants are provided for time, angle, data and currency.
                                 END
-                                code-note 'strong unit type checks';
+                                code-note '20 popular currencies included';
                             ];
                             article [
-                                asciinema '/static/demos/demo-Units.cast';
+                                asciinema '/static/demos/demo-OtherUnits.cast';
                             ];
                         ];
 
@@ -344,75 +343,24 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
                                   - `^<4 in> .in: 'm'` length
 
                                 END
-                                code-note 'a vast set of US, UK and SI units is provided';
+                                code-note 'a large collection of US, UK and SI units is provided';
                             ];
                             article [
                                 asciinema '/static/demos/demo-Conversions.cast';
                             ];
                         ];
 
-                    Bases-Unicode => tab
+                    Sequences => tab
                         vignette :direction, [
                             article [ markdown q:to/END/;
-                                #### 10. Bases & Unicode
+                                #### 14. Sequences
 
-                                  - `0b101010` binary
-                                  - `0o52` octal
-                                  - `0x2A` hex
-                                  - `0d42` decimal
-                                  - `0rXXXXII` roman
-                                  - `c<red>` CSS colors
-                                  - `42.base(23)` any base
-                                  - `0xFF + 0b1` mixed-base math
-                                  - `0b1010 +< 2` bit shift
-                                  - `0b1010 +& 0b0110` bitwise AND, OR, XOR, NOT
-                                  - `'π'.ord` codepoint value
-                                  - `'π'.uniname` unicode name
-                                  - `'π'.uniprops` unicode properties
-
-                                Wide range of microprocessor instructions.
-                                END
-                                code-note 'power tools for coders';
-                            ];
-                            article [
-                                asciinema '/static/demos/demo10.cast';
-                            ];
-                        ];
-
-                    Variables-Strings => tab
-                        vignette :direction<rtl>, [
-                            article [ markdown q:to/END/;
-                                #### 4. Variables & Strings
-
-                                Use `$` variables for flexible memory.
-
-                                  - `$x = 42` store, `$x` recall
-                                  - `$_` use previous result
-                                  - `$s = "hi"` text strings too
-                                  - `"ans is $x"` interpolation with `""`
-                                  - `~` string concatenation
-                                  - `@a = (1,2,3,4)` number list
-                                  - `@s = <a b c d>` word list
-                                END
-                                code-note 'memory for intermediate results';
-                            ];
-                            article [
-                                asciinema '/static/demos/demo4.cast';
-                            ];
-                        ];
-
-                    Ranges-Sequences => tab
-                        vignette :direction<rtl>, [
-                            article [ markdown q:to/END/;
-                                #### 6. Ranges & Sequences
-
-                                  - `"hi" xx 4` repetition
-                                  - `5..12` the range from `5` to `12`
-                                  - `|(5..12)` use `|()` to flatten it
-                                  - `(5..12)[3]` indexing (from 0)
-                                  - `|^12` use `^` as a shorthand for `0..11`
-                                  - `3,6...15` arithmetic sequence
-                                  - `1,2,4...16` geometric sequence
+                                  - `xx` denotes repetition
+                                  - `..` specifies a range
+                                  - `|` flattens it into a list
+                                  - `^` is for "up to"
+                                  - `[]` is for indexing (from 0)
+                                  - `...` is a sequence - arithmetic & geometric
                                   - `(0,1,*+*...Inf)[^8]` fibonacci sequence (first 8)
 
                                 Use the `*` _whatever_ to define the next-value operation.
@@ -420,9 +368,82 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
                                 code-note 'infinite lazy sequences';
                             ];
                             article [
-                                asciinema '/static/demos/demo6.cast';
+                                asciinema '/static/demos/demo-Sequences.cast';
                             ];
                         ];
+
+                    Bases => tab
+                        vignette :direction, [
+                            article [ markdown q:to/END/;
+                                #### 15. Bases
+
+                                  - `0b` binary
+                                  - `0o` octal
+                                  - `0x` hex
+                                  - `0d` decimal
+                                  - `0r` roman
+
+                                Any base & mixed-base math supported too.
+                                END
+                                code-note 'power tools for coders';
+                            ];
+                            article [
+                                asciinema '/static/demos/demo-Bases.cast';
+                            ];
+                        ];
+
+                    Unicode => tab
+                        vignette :direction, [
+                            article [ markdown q:to/END/;
+                                #### 16. Unicode
+
+                                  - `.ord` codepoint value
+                                  - `.uniname` unicode name
+                                  - `.uniprops` unicode properties
+
+                                The unit syntax uses uniprop `Numeric_Value`
+                                END
+                                code-note 'strings use unicode graphemes';
+                            ];
+                            article [
+                                asciinema '/static/demos/demo-Unicode.cast';
+                            ];
+                        ];
+
+                    Theory => tab
+                        vignette :direction, [
+                            article [ markdown q:to/END/;
+                                #### 17. Number Theory
+
+                                `abundant-number, are-coprime, chinese-remainder, continued-fraction, convergents, cousin-primes, deficient-number, digit-count, divisor-sigma, divisors, euler-phi, factor-gaussian-integer, factor-integer, factorial, fibonacci, from-continued-fraction, from-number-expansion, gcd-gaussian, gcd-rational, infix:<=>, integer-digits, integer-exponent, integer-partitions, is-abundant-number, is-composite, is-deficient-number, is-happy-number, is-harshad-number, is-perfect-number, is-prime, is-prime-gaussian, is-prime-power, is-quadratic-irrational, kronecker-delta, lcm-gaussian, lcm-rational, mangold-lambda, modular-inverse, multiplicative-order, next-prime, number-expansion, perfect-number, phi-number-system, polygonal-number, power-mod, prime, primitive-root-list, quotient, quotient-reminder, random-prime, real-digits, related-primes, sexy-primes, trial-factor-integer, twin-primes`
+                                END
+                                code-note 'modelled on Wolfram Language';
+                            ];
+                            article [
+                                asciinema '/static/demos/demo-Theory.cast';
+                            ];
+                        ];
+
+                    Miscellaneous => tab
+                        vignette :direction, [
+                            article [ markdown q:to/END/;
+                                #### 18. Miscellaneous
+
+                                  - `c<>` CSS colors, functions and math
+                                  - `+&`, `+|`, `+^` bitwise AND, OR, XOR/NOT
+                                  - `+<`, `+>` bitwise shift
+                                  - `c`, `g`, `Na` constants
+
+                                Approximate 20 built-in constants.
+                                END
+                                code-note 'and there\'s more...';
+                            ];
+                            article [
+                                asciinema '/static/demos/demo-Misc.cast';
+                            ];
+                        ];
+
+
                 ];
             ];
 

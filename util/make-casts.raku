@@ -6,11 +6,9 @@ constant $path = "../static/demos/";
 constant $from = "demo-script";
 constant $freq = '0.7';  #was 1.0
 constant $last = 20;
+#constant $mask-sh = ().SetHash;
 constant $mask-sh = (^$last).SetHash;
-
-#$mask-sh{12}:delete;
-$mask-sh{^3}:delete;
-say "mask: {$mask-sh.keys.sort}";
+$mask-sh{17}:delete;
 
 my @lines = "$path$from".IO.lines;
 
@@ -36,6 +34,8 @@ for @lines -> $line {
 
     %sections{$current}.push($line) if $current;
 }
+
+#ddt @sections; die;
 
 ## Common head and tail
 
@@ -85,12 +85,15 @@ sub line-run($line, :$auto, :$prompt) {
 
     my $stanza;
     ##iamerejh
+    #drip when prompt line
     if $prompt {
         $stanza ~= .&line-out given '> ';
         $stanza ~= "\n";
-    }
 
-    drip($line, $stanza);
+        drip($line, $stanza);
+    } else {
+        drop($line, $stanza);
+    }
 
     if $auto {
         my $res = qqx`crag -- \'$line\'`.trim;

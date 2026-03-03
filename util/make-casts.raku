@@ -4,27 +4,48 @@ use Data::Dump::Tree;
 
 constant $path = "../static/demos/";
 constant $from = "demo-script";
-constant $freq = '1';
+constant $freq = '0.7';  #was 1.0
+constant $last = 20;
+constant $mask-sh = (^$last).SetHash;
 
-## First, we set up some common data and subs
+$mask-sh{12}:delete;
+say "mask: {$mask-sh.keys.sort}";
 
-my $script = q:to/END/;
-2 + 3 * 4           #bidmas precedence
-(2+3) * 4           #parentheses
--0.1-0.2            #negatives
-1.23e4 / 23         #divide
-(7/2) % 3           #modulo (%)
-END
+my @lines = "$path$from".IO.lines;
+
+my @sections;
+my %sections;
+my $current;
+
+# ingest the demo-script
+for @lines -> $line {
+    # ignore everything before ####.
+    next unless $line ~~ /^ '####' / ^ff *;
+
+    # section header
+    if $line ~~ /^\s* '##' \s* (.+) $/ {
+        $current = ~$0.trim;
+        %sections{$current} = [];
+        @sections.append: $current;
+        next;
+    }
+
+    # skip blank lines
+    next if $line.trim eq '';
+
+    %sections{$current}.push($line) if $current;
+}
+
+## Common head and tail
 
 my $head = q:to/END/;
-{"version":3,"term":{"cols":116,"rows":36,"type":"xterm-256color","theme":{"fg":"#ffffff","bg":"#1e1e1e","palette":"#000000:#990000:#00a600:#999900:#0000b3:#b300b3:#00a6b3:#bfbfbf:#666666:#e60000:#00d900:#e6e600:#0000ff:#e600e6:#00e6e6:#e6e6e6"}},"timestamp":1770210678,"idle_time_limit":1.0,"env":{"SHELL":"/bin/zsh"}}
+{"version":3,"term":{"cols":116,"rows":36,"type":"xterm-256color","theme":{"fg":"#ffffff","bg":"#1e1e1e","palette":"#000000:#990000:#00a600:#999900:#0000b3:#b300b3:#00a6b3:#bfbfbf:#666666:#e60000:#00d900:#e6e600:#0000ff:#e600e6:#00e6e6:#e6e6e6"}},"timestamp":1770210678,"idle_time_limit":0.7,"env":{"SHELL":"/bin/zsh"}}
 [0.000, "o", "\r\u001b[0m\u001b[27m\u001b[24m\u001b[J~ > \u001b[K\u001b[?2004h"]
 [1.524, "o", "c"]
 [0.203, "o", "r"]
 [0.191, "o", "a"]
 [0.090, "o", "g"]
 [0.603, "o", "\u001b[?2004l\r\r\n"]
-[0.964, "o", "> "]
 END
 
 my $tail = q:to/END/;
@@ -44,27 +65,39 @@ sub line-out($s) {
     qq`[$rand, "o", "$s"]`;
 }
 
-sub line-run($line) {
-    my $res = qqx`crag -- \'$line\'`.trim;
+sub line-run($line, :$auto, :$prompt) {
+    say $line;
 
     my $stanza;
+
+    if $prompt {
+        $stanza ~= .&line-out given '> ';
+        $stanza ~= "\n";
+    }
+
     $stanza ~= .&line-out ~ "\n" for $line.comb;
     $stanza ~= .&line-out given '\r\n';
     $stanza ~= "\n";
-    $stanza ~= .&line-out given $res ~ '\r\n';
-    $stanza ~= "\n";
-    $stanza ~= .&line-out given '> ';
-    $stanza ~= "\n";
+
+    if $auto {
+        my $res = qqx`crag -- \'$line\'`.trim;
+        $stanza ~= .&line-out given $res ~ '\r\n';
+        $stanza ~= "\n";
+    }
+
     $stanza;
 }
 
-sub cast-out($section, @script) {
-    my $to = "demo-$section.cast";
+sub cast-out($section is copy, @script, :$auto) {
+    $section ~~ s/<.ws> '(!auto)'//;
+    say my $to = "demo-$section.cast";
 
     my $out-str = $head;
 
+    my $prompt = 1;
     for @script -> $line {
-        $out-str ~= $line.split('#')[0].trim.&line-run.trim ~ "\n";
+        $prompt = $++ %% 2 unless $auto;
+        $out-str ~= $line.split('#')[0].trim.&line-run(:$auto, :$prompt).trim ~ "\n";
     }
 
     $out-str ~= $tail.trim;
@@ -72,31 +105,13 @@ sub cast-out($section, @script) {
     spurt "$path$to", $out-str;
 }
 
+# output all sections
+for @sections -> $section {
+    my $this = $++;
+    next if $this ∈ $mask-sh;
 
-my @lines = "$path$from".IO.lines;
+    my $auto = not $section ~~ /'!auto'/;
+    say "$this: $section; auto: $auto";
 
-my @sections;
-my %sections;
-my $current;
-
-for @lines -> $line {
-    # ignore everything before #1.
-    next unless $line ~~ /^ '#1.' / ff *;
-
-    # section header
-    if $line ~~ /^\s* '#' \d+ '.' \s* (.+) $/ {
-        $current = ~$0.trim;
-        %sections{$current} = [];
-        @sections.append: $current;
-        next;
-    }
-
-    # skip blank lines
-    next if $line.trim eq '';
-
-    %sections{$current}.push($line) if $current;
-}
-
-for @sections {
-    cast-out($_, %sections{$_})
+    cast-out($section, %sections{$section}, :$auto);
 }

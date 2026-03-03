@@ -83,16 +83,16 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
                                 code-note 'starts in 1 second [note 1]';
                             ];
                             article [
-                                asciinema '/static/demos/demo-Arithmetic.cast';  #iamerejh
+                                asciinema '/static/demos/demo-Arithmetic.cast';
                             ];
                         ];
 
-                    Powers-Roots => tab
+                    Functions => tab
                         vignette :direction<rtl>, [
                             article [ markdown q:to/END/;
-                                #### 2. Powers & Roots
+                                #### 2. Functions
 
-                                Basic calculator functions are here too.
+                                Powers and roots are here too.
 
                                   - `x%` percentage
                                   - `1/x` reciprocal
@@ -108,101 +108,153 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
                                 code-note 'right in your terminal ';
                             ];
                             article [
-                                asciinema '/static/demos/demo2.cast';
+                                asciinema '/static/demos/demo-Functions.cast';
                             ];
                         ];
 
-                    Functions-Complex => tab
+                    Logarithms => tab
                         vignette :direction<rtl>, [
                             article [ markdown q:to/END/;
-                                #### 3. Functions & Complex Numbers
+                                #### 3. Logarithms
 
-                                Advanced calculator functions are easy.
+                                Logarithms are provided with exponential inverse.
 
                                   - `log10 x` base `10` logarithms
                                   - `log x` natural logarithms (base `e`)
                                   - `exp x` exponentials
+
+                                Use `$_` for the previous result (the topic)
+                                END
+                                code-note 'Euler\'s identity works fine';
+                            ];
+                            article [
+                                asciinema '/static/demos/demo-Logs.cast';
+                            ];
+                        ];
+
+                    Trigonometry => tab
+                        vignette :direction<rtl>, [
+                            article [ markdown q:to/END/;
+                                #### 4. Trigonometry
+
+                                Trigonometric and hyperbolic functions with inverse (arc-) variants.
+
                                   - `sin x`, `cos x`, `tan x` trigonometry
                                   - `asin x`, `acos x`, `atan x` inverse
                                   - `sinh x`, `cosh x`, `tanh x` hyperbolics
                                   - `asinh x`, `acosh x`, `atanh x` inverse
-                                  - `3+4i` complex numbers
-                                  - `polar` and `gcd` functions
+
+                                Use `Inf` (or ∞) for infinity.
                                 END
                                 code-note 'degrees, radians, grads';
                             ];
                             article [
-                                asciinema '/static/demos/demo3.cast';
+                                asciinema '/static/demos/demo-Trig.cast';
                             ];
                         ];
 
-                    Variables-Strings => tab
+                    Complex => tab
                         vignette :direction<rtl>, [
                             article [ markdown q:to/END/;
-                                #### 4. Variables & Strings
+                                #### 5. Complex
 
-                                Use `$` variables for flexible memory.
+                                A built-in number type that works with the operations and functions.
 
-                                  - `$x = 42` store, `$x` recall
-                                  - `$_` use previous result
-                                  - `$s = "hi"` text strings too
-                                  - `"ans is $x"` interpolation with `""`
-                                  - `~` string concatenation
-                                  - `@a = (1,2,3,4)` number list
-                                  - `@s = <a b c d>` word list
+                                  - `i` Imaginary
+                                  - `3+4i` Complex
+                                  - `.abs` absolute magnitude
+
+                                Use `i` represents square root of `-1`.
                                 END
-                                code-note 'memory for intermediate results';
+                                code-note 'polar coordinate transformations';
                             ];
                             article [
-                                asciinema '/static/demos/demo4.cast';
+                                asciinema '/static/demos/demo-Complex.cast';
                             ];
                         ];
 
-
-                    Number-Types => tab
+                    Random => tab
                         vignette :direction<rtl>, [
                             article [ markdown q:to/END/;
-                                #### 5. Number Types
+                                #### 6. Random
 
-                                A comprehensive set of number types.
+                                  - `rand` random generate (0-1)
+                                  - `10.rand` random in range (0 <= x < 10)
+                                  - `(1..6).pick: 6` random select
+                                  - `(1..6).roll: 6` random repeat
+
+                                Use `.pick` for one time, `.roll` is like a dice.
+                                END
+                                code-note 'uses the MT19937 — Mersenne Twister algorithm';
+                            ];
+                            article [
+                                asciinema '/static/demos/demo-Random.cast';
+                            ];
+                        ];
+
+                    Memory => tab
+                        vignette :direction<rtl>, [
+                            article [ markdown q:to/END/;
+                                #### 7. Memory
+
+                                Use `$` or `@` to denote a named variable.
+
+                                  - `$x=42` set Scalar variable `$x`
+                                  - `$x/7` recall variable `$x`
+                                  - `$_` (dollar underscore) is the previous result
+                                  - `@a` is an array variable (i.e. a list of items)
+                                  - `@a[i]` to index an array
+                                  - `<>` to quote a wordlist
+                                .
+                                END
+                                code-note 'hashes (dictionaries) too e.g. %h{}';
+                            ];
+                            article [
+                                asciinema '/static/demos/demo-Memory.cast';
+                            ];
+                        ];
+
+                    Types => tab
+                        vignette :direction<rtl>, [
+                            article [ markdown q:to/END/;
+                                #### 8. Types
+
+                                A comprehensive set of number types is included.
 
                                   - `42` Int (big integer)
                                   - `<2/3>` Rat (rational fraction)
                                   - `1.424e-2` Num (IEEE P754 float 64)
                                   - `3+4i` Complex
-                                  - `Inf` Infinity
+                                  - `Inf` infinity and `NaN` not a number
                                   - `<2/3> * <3/4>` exact fractions
                                   - `1.424e-2 * <270/7>` type mixing
 
                                 Unlimited precision & range.
                                 END
-                                code-note 'calculate with Googol range';
+                                code-note 'calculate with googol range';
                             ];
                             article [
-                                asciinema '/static/demos/demo5.cast';
+                                asciinema '/static/demos/demo-Types.cast';
                             ];
                         ];
 
-                    Ranges-Sequences => tab
+                    Rounding => tab
                         vignette :direction<rtl>, [
                             article [ markdown q:to/END/;
-                                #### 6. Ranges & Sequences
+                                #### 9. Rounding
 
-                                  - `"hi" xx 4` repetition
-                                  - `5..12` the range from `5` to `12`
-                                  - `|(5..12)` use `|()` to flatten it
-                                  - `(5..12)[3]` indexing (from 0)
-                                  - `|^12` use `^` as a shorthand for `0..11`
-                                  - `3,6...15` arithmetic sequence
-                                  - `1,2,4...16` geometric sequence
-                                  - `(0,1,*+*...Inf)[^8]` fibonacci sequence (first 8)
+                                Rounding precision is controlled by the `r()` function.
 
-                                Use the `*` _whatever_ to define the next-value operation.
+                                  - `floor`, `ceiling` and `abs` functions
+                                  - default rounding is `0.001` (3 digits)
+                                  - `r 0.1` is 1 digit, `r 0.00001` is 5 digits
+                                  - `r Nil` turns off rounding
+
                                 END
-                                code-note 'infinite lazy sequences';
+                                code-note 'intermediate values keep full precision';
                             ];
                             article [
-                                asciinema '/static/demos/demo6.cast';
+                                asciinema '/static/demos/demo-Rounding.cast';
                             ];
                         ];
                 ];
@@ -211,33 +263,29 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
             div [
                 p :style('margin-bottom: unset;'), b em 'the cool stuff: ';
                 tabs [
-                    Random-Rounding => tab
+                    LLM => tab
                         vignette :direction, [
                             article [ markdown q:to/END/;
-                                #### 7. Random & Rounding
+                                #### 10. LLM
 
-                                  - `rand` random generate (0-1)
-                                  - `(^6).pick: 6` random select
-                                  - `(^6).roll: 6` random repeat
-                                  - `floor 3.162` floor, ceiling, abs
-                                  - `sqrt 10` 3.162 (default is 0.001)
-                                  - `r 0.1; sqrt 10` 3.2 (use r ... to set)
-                                  - `r Nil; sqrt 10` 3.1622776601683795 (float64 rounding)
-                                  - `(2**17-1).is-prime` check primality
+                                Grab AI info directly into your calculations.
 
-                                E.g. `r 0.1;` specifies 1-digit display rounding.
+                                  - get text ... `?<query>`
+                                  - get amount ... `?^<query in units>`
+
+                                Use amounts in calculations, store them in memory.
                                 END
-                                code-note 'full internal precision maintained';
+                                code-note 'all popular LLM platforms';
                             ];
                             article [
-                                asciinema '/static/demos/demo7.cast';
+                                asciinema '/static/demos/demo-LLM.cast';
                             ];
                         ];
 
-                    SI-Units => tab
+                    SIUnits => tab
                         vignette :direction, [
                             article [ markdown q:to/END/;
-                                #### 8. SI Units
+                                #### 11. SI Units
 
                                   - `42m` metres
                                   - `10s` seconds
@@ -245,42 +293,61 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
                                   - `80kg` kilograms
                                   - `42m / 10s` speed in m/s (s=d/t)
                                   - `20kg * g` weight in N (F=ma)
-                                  - `$_ .in: 'lb'` conversion (note spaces)
+                                  - `$_ .in: 'lb'` conversion
                                   - `$_ * 4m` energy in J (E=Fd)
                                   - `(10m~10%)+(5m~0.2)` error handling
 
-                                Both relative `%` and absolute error values supported.
+                                Both relative `%` and absolute error values can be specified with `~`.
                                 END
-                                code-note 'error calcs for linear calculations';
+                                code-note 'dimensional analysis checks';
                             ];
                             article [
-                                asciinema '/static/demos/demo8.cast';
+                                asciinema '/static/demos/demo-SIUnits.cast';
                             ];
                         ];
 
-                    Conversions-Constants => tab
+                    Units => tab
                         vignette :direction, [
                             article [ markdown q:to/END/;
-                                #### #9. Conversions & Constants
+                                #### 12. Units (General)
 
+                                General syntax is `^<value units [~error]>`.
+
+                                  - `^<4 in ~10%>` general
+                                  - `^<4 ins>` plural
+                                  - `^<4 inch>` synonyms
+                                  - `^<23:59:59>` time
+                                  - `^<30º10'5">` angle (degrees)
+                                  - `^<pi rad>` angle (radians)
                                   - `64Mib` data
                                   - `US$ 25` currency
-                                  - `£20 .in: 'US$'` conversion
-                                  - `39ºC .in: 'ºF'` temperature
-                                  - `^<4 in>` general `^<>` syntax
-                                  - `^<4 inch>` synonyms
-                                  - `^<30º10'5">` angles (degrees)
-                                  - `^<pi rad>` angles (radians)
-                                  - `^<23:59:59>` time
-                                  - `c` speed of light
-                                  - `Na` Avogadro number
 
-                                Use the caret-angle syntax `^<>` for non-SI Units.
+                                Special variants are provided for time, angle, data and currency.
                                 END
-                                code-note '24 popular constants built in';
+                                code-note 'strong unit type checks';
                             ];
                             article [
-                                asciinema '/static/demos/demo9.cast';
+                                asciinema '/static/demos/demo-Units.cast';
+                            ];
+                        ];
+
+                    Conversions => tab
+                        vignette :direction, [
+                            article [ markdown q:to/END/;
+                                #### 13. Conversions
+
+                                Use the `.in: ''` operation to convert units.
+
+                                  - `£20  .in: 'US$'` currency
+                                  - `39ºC .in: 'ºF'` temperature
+                                  - `10N  .in: 'lb'` weight
+                                  - `^<4 in> .in: 'm'` length
+
+                                END
+                                code-note 'a vast set of US, UK and SI units is provided';
+                            ];
+                            article [
+                                asciinema '/static/demos/demo-Conversions.cast';
                             ];
                         ];
 
@@ -312,23 +379,48 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
                             ];
                         ];
 
-
-                    LLM-Queries-Timers => tab
-                        vignette :direction, [
+                    Variables-Strings => tab
+                        vignette :direction<rtl>, [
                             article [ markdown q:to/END/;
-                                #### 11. LLM Queries & Timers
+                                #### 4. Variables & Strings
 
-                                  - `?<what is an elephant>` LLM to text
-                                  - `?^<mass of an elephant in kg>` LLM to unit
-                                  - `sleep 4; say "Wake up it's {DateTime.now.hh-mm-ss} \a\a\a"` an alarm clock
-                                  - `qx<clear>` exec shell command
+                                Use `$` variables for flexible memory.
 
-                                Use query and caret like this `?<>` and this `?^<>`.
+                                  - `$x = 42` store, `$x` recall
+                                  - `$_` use previous result
+                                  - `$s = "hi"` text strings too
+                                  - `"ans is $x"` interpolation with `""`
+                                  - `~` string concatenation
+                                  - `@a = (1,2,3,4)` number list
+                                  - `@s = <a b c d>` word list
                                 END
-                                code-note 'grab facts directly into your calculations';
+                                code-note 'memory for intermediate results';
                             ];
                             article [
-                                asciinema '/static/demos/demo11.cast';
+                                asciinema '/static/demos/demo4.cast';
+                            ];
+                        ];
+
+                    Ranges-Sequences => tab
+                        vignette :direction<rtl>, [
+                            article [ markdown q:to/END/;
+                                #### 6. Ranges & Sequences
+
+                                  - `"hi" xx 4` repetition
+                                  - `5..12` the range from `5` to `12`
+                                  - `|(5..12)` use `|()` to flatten it
+                                  - `(5..12)[3]` indexing (from 0)
+                                  - `|^12` use `^` as a shorthand for `0..11`
+                                  - `3,6...15` arithmetic sequence
+                                  - `1,2,4...16` geometric sequence
+                                  - `(0,1,*+*...Inf)[^8]` fibonacci sequence (first 8)
+
+                                Use the `*` _whatever_ to define the next-value operation.
+                                END
+                                code-note 'infinite lazy sequences';
+                            ];
+                            article [
+                                asciinema '/static/demos/demo6.cast';
                             ];
                         ];
                 ];
@@ -336,15 +428,17 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
 
             markdown q:to/MDEND/;
 
+                ## Get Started
+
                 CragCLI is Free Open Source Software built on the Raku REPL. It provides a unified CLI to several Raku modules. No Ads Ever.
 
                 ---
 
-                ***THIS APPLICATION IS PROVIDED "AS IS" WITHOUT WARRANTY OR LIABILITY.***
+                ***PROVIDED "AS IS" WITHOUT WARRANTY OR LIABILITY***
 
-                ***THIS APPLICATION IS NOT INTENDED FOR USE IN MISSION CRITICAL APPLICATIONS***
+                ***NOT INTENDED FOR USE IN MISSION CRITICAL APPLICATIONS***
 
-                ## Get Started
+                ---
 
                 ### Step 1
 
@@ -388,6 +482,6 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
 
                   4. crag is a full Raku repl - so you can write subroutines, loops, conditionals, comparisons and so on (see [https://docs.raku.org](https://docs.raku.org))
 
-                  5. If your calculations outgrow the crag app, use can use the underlying crag modules in Raku code.
+                  5. If your calculations outgrow the crag app, you can use the underlying crag modules in Raku code.
                 MDEND
         ];

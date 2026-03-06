@@ -416,7 +416,7 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
 
                                   - `c<>` CSS colors, functions and math
                                   - `+&`, `+|`, `+^` bitwise AND, OR, XOR/NOT
-                                  - `+<`, `+>` bitwise shift
+                                  - `+<`, `+>` bitwise shift lef, right
                                   - `c`, `g`, `Na` constants
 
                                 Approx. 20 built-in constants.

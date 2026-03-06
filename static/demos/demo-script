@@ -59,7 +59,7 @@ $x*$y
 4-3i
 sqrt $y
 2+1i
-$y.Polarpolar        #Polar Co-ords
+$y.polar        #Polar Co-ords
 (5 0.9272952180016122)
 
 ##Random

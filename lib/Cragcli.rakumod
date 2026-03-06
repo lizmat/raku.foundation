@@ -259,7 +259,7 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
 
                                 Use amounts in calculations, store them in memory.
                                 END
-                                code-note 'all popular LLM platforms';
+                                code-note 'most popular LLM platforms';
                             ];
                             article [
                                 asciinema '/static/demos/demo-LLM.cast';

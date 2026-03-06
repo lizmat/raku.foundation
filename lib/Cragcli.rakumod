@@ -148,6 +148,7 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
                                   - `i` Imaginary
                                   - `3+4i` Complex
                                   - `.abs` absolute magnitude
+                                  - `.polar` transformation
 
                                 `i` represents the square root of `-1`.
                                 END

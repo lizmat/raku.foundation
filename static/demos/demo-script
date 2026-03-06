@@ -69,7 +69,7 @@ rand                #random generate (0-1)
 (1..6).roll: 6      #random repeat
 
 ##Memory (!auto)
-$x=42;
+$x=42
 42
 $x/7                #named memory
 6

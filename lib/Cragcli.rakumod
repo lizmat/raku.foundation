@@ -15,7 +15,7 @@ sub vignette(*@a, *%h) {
 
 my &index = &page.assuming( #:REFRESH(15),
     title => 'CragCLI',
-    description => 'Command line Calculator using Raku Grammars',
+    description => 'CragCLI: Command Line Calculator',
 
     nav => nav(
         logo =>
@@ -56,6 +56,7 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
             shadow;
             div :align<center>, [
                 h1 b 'CragCLI: Command Line Calculator';
+                h4 b 'with AI and dimensional analysis';
                 spacer;
             ];
 

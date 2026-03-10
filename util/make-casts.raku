@@ -4,20 +4,20 @@ use Data::Dump::Tree;
 
 constant $path = "../static/demos/";
 constant $from = "demo-script";
-constant $freq = '0.7';  #was 1.0
+constant $freq = '0.4';  #was 1.0
 
 my $last = 30; #much too large
-my $dry-run = 0;
-my $one-only = 10;
+my $dry-run;
+my $one-only;
 
 my $mask-sh = ().SetHash;
-if ! $dry-run {
-    $mask-sh = (^$last).SetHash;
-
-    if $one-only {
-        $mask-sh{$one-only}:delete;
-    }
-}
+#if ! $dry-run {
+#    $mask-sh = (^$last).SetHash;
+#
+#    if $one-only {
+#        $mask-sh{$one-only}:delete;
+#    }
+#}
 
 my @lines = "$path$from".IO.lines;
 

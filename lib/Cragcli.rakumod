@@ -650,7 +650,7 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
             div [
                 p :style('margin-bottom: unset;'), b em 'some stories: ';
                 tabs [
-                    Formula1-Straight => tab
+                    Formula1-Kinematics => tab
                         vignette :direction<rtl>, [
                             article [ markdown q:to/END/;
                                 #### Formula1 - Kinematics

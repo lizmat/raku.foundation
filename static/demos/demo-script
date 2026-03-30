@@ -182,20 +182,21 @@ An elephant is a large, gray mammal with a trunk and tusks.
 ^<4 inchs>          #plurals
 ^<4 sq ft>          #Area
 ^<4 cu yards>       #Volume
-^<4 cu yards> / ^<4 sq ft>  #unit math
-^<4 million metres>         #common terms
-^<4 million feet> .rebase   #in SI base units
-^<4 million m> .norm        #normalize SI prefix
-^<1 pint> in 'oz'
+^<4 cu yards> / ^<4 sq ft>   #unit math
+^<4 million metres>          #common terms
+^<4 million feet> .rebase       #in SI base units
+^<4 million feet> .rebase.norm  #normalize SI prefix
 
 ##Time (!auto)
-42s ~10%
+42s ~10%            #SI style
 42s ±4.2
-^<23:59:59>         #time
+^<7 days>           #sec, hr, day, week, month, year
+7day
+^<23:59:59>         #hh:mm:ss style
 23:59:59
-'2015-11-24'.Date.year #date
+'2015-11-24'.Date.year #parse dates
 2015
-DateTime.now.hh-mm-ss
+DateTime.now.hh-mm-ss  #format dates
 13:56:23
 
 ##Data

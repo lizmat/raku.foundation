@@ -8,7 +8,7 @@ constant $freq = '0.4';  #1.0 is ponderous, 0.1 is lightning fast
 
 my $last = 40; #much too large
 my $dry-run = 0;
-my $one-only = 27;  #set to index(s), Nil means do all
+my $one-only = 13;  #set to index(s), Nil means do all
 
 #eg agg demo-Arithmetic.cast demo-Arithmetic.gif --theme nord
 my $agg = 1;
@@ -74,43 +74,63 @@ my $tail = q:to/END/;
 [1.000, "o", "\r\n"]
 END
 
-sub line-out($s, :$drop) {
+sub chars-out($s, :$drop) {
     my $rand = (0.001).fmt('%.3f');
     $rand = $freq.rand.round(0.001).fmt('%.3f') unless $drop;
     qq`[$rand, "o", "$s"]`;
 }
 
-sub drip($line, $stanza is rw) {
-    $stanza ~= .&line-out ~ "\n" for $line.comb;
-    $stanza ~= .&line-out given '\r\n';
+sub line-new($stanza is rw) {
+    $stanza ~= .&chars-out given '\r\n';
     $stanza ~= "\n";
-    $stanza;
 }
 
-sub drop($line, $stanza is rw) {
-    $stanza ~= .&line-out(:drop) ~ "\n" given $line;
-    $stanza ~= .&line-out given '\r\n';
+sub prompt-out($stanza is rw) {
+    $stanza ~= .&chars-out given '> ';
     $stanza ~= "\n";
-    $stanza;
+}
+
+sub drip($stanza is rw, $line) {
+    $stanza ~= .&chars-out ~ "\n" for $line.comb;
+}
+
+sub drop($stanza is rw, $line) {
+    $stanza ~= .&chars-out(:drop) ~ "\n" given $line;
 }
 
 sub line-run($line, :$auto, :$prompt) {
     say $line;
 
+    my $do-comment = so $line ~~ /'#'/;
+
+    my ($code, $space, $comment) = '' xx 3;
+    if $do-comment {
+        $line ~~ /(.*?) (\s*) '#' (.*)/;
+        ($code, $space, $comment) = $0, $1, $2;
+
+#        say "$code";     # $v = ^<328 km/h>
+#        say "$space#$comment";  #     # exit speed
+    } else {
+        $code = $line;
+    }
+
+
     my $stanza;
 
     if $prompt {
-        $stanza ~= .&line-out given '> ';
-        $stanza ~= "\n";
-
-        drip($line, $stanza);
+        $stanza.&prompt-out;
+        $stanza.&drip($code);
+        $stanza.&drop("$space#$comment") if $do-comment;
+        $stanza.&line-new;
     } else {
-        drop($line, $stanza);
+        $stanza.&drop($code);
+        $stanza.&line-new;
     }
 
     if $auto {
-        my $res = qqx`crag -- \'$line\'`.trim;
-        drop($res, $stanza)
+        my $res = qqx`crag -- \'$code\'`.trim;
+        $stanza.&drop($res);
+        $stanza.&line-new;
     }
 
     $stanza;
@@ -126,7 +146,6 @@ sub cast-out($section is copy, @script, :$auto) {
     for @script -> $line {
         $prompt = $++ %% 2 unless $auto;
         $out-str ~= $line.trim.&line-run(:$auto, :$prompt).trim ~ "\n";
-#        $out-str ~= $line.split('#')[0].trim.&line-run(:$auto, :$prompt).trim ~ "\n";   #iamerejh
     }
 
     $out-str ~= $tail.trim;

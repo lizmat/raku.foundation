@@ -5,6 +5,8 @@
 
 Code for the cragcli.info website.
 
+Please visit https://github.com/librasteve/raku-App-Crag (the repo) or https://cragcli.info (the website) for more info...
+
 ## Local Installation
 
 ### Install Cro & Air, Cro

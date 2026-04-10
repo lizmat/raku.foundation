@@ -650,6 +650,80 @@ site :@tools, :register[Background.new, LightDark.new, Air::Plugin::Asciinema.ne
             div [
                 p :style('margin-bottom: unset;'), b em 'some stories: ';
                 tabs [
+                    Artemis-Launch => tab
+                        vignette [
+                            article [ markdown q:to/END/;
+                                #### Artemis Launch Phase
+
+                                  - Liftoff acceleration over one and a half gravity
+                                  - Immense thrust lifting thousands of tons skyward
+                                  - Rapid climb to orbital velocity in a few minutes
+
+                                END
+                                code-note 'using mass, force, speed, acceleration';
+                            ];
+                            article [
+                                asciinema '/static/demos/demo-Artemis-Launch.cast';
+                            ];
+                        ];
+
+                    Artemis-TransLunar => tab
+                        vignette [
+                            article [ markdown q:to/END/;
+                                #### Artemis TransLunar Phase
+
+                                  - Precise burn sends spacecraft toward the Moon
+                                  - High efficiency engine maximizes velocity per fuel
+                                  - Over half the mass consumed for the maneuver
+                                  - Small velocity change demands enormous propellant
+
+                                END
+                                code-note 'via the Tsiolkovsky rocket equation';
+                            ];
+                            article [
+                                asciinema '/static/demos/demo-Artemis-TransLunar.cast';
+                            ];
+                        ];
+
+                    Artemis-Reentry => tab
+                        vignette [
+                            article [ markdown q:to/END/;
+                                #### Artemis Reentry Phase
+
+                                  - Gigantic energy dump during atmospheric reentry
+                                  - Hundreds of tons TNT equivalent dissipated as heat
+
+                                END
+                                code-note 'simple kinetic energy math';
+                            ];
+                            article [
+                                asciinema '/static/demos/demo-Artemis-Reentry.cast';
+                            ];
+                        ];
+
+                    Artemis-Heatshield => tab
+                        vignette [
+                            article [ markdown q:to/END/;
+                                #### Artemis Heatshield
+
+                                  - Extreme heating concentrated on small shield area
+                                  - Thermal protection absorbs megawatts of power
+                                  - Intense thermal radiation from superheated heat shield
+                                  - At ~2800°C, the capsule radiates ~5 MW per m²
+                                  - Total radiated power ~100 MW
+                                Still much less than total energy dissipation →
+                                👉 most heating handled by ablation, not just radiation
+
+                                END
+                                code-note 'apply blackbody radiation (Stefan–Boltzmann) law';
+                            ];
+                            article [
+                                asciinema '/static/demos/demo-Artemis-Heatshield.cast';
+                            ];
+                        ];
+                    ];
+
+                tabs [
                     Formula1-Kinematics => tab
                         vignette :direction<rtl>, [
                             article [ markdown q:to/END/;

@@ -8,7 +8,7 @@ constant $freq = '0.4';  #1.0 is ponderous, 0.1 is lightning fast
 
 my $last = 40; #much too large
 my $dry-run = 0;
-my $one-only = 13;  #set to index(s), Nil means do all
+my $one-only = 34;  #set to index(s), Nil means do all
 
 #eg agg demo-Arithmetic.cast demo-Arithmetic.gif --theme nord
 my $agg = 1;

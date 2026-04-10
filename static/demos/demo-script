@@ -370,3 +370,72 @@ s = ut + (1/2)at²
 ?<formula get acceleration from distance and time show only math symbols>
 a = 2d / t²
 
+##Artemis-Launch (!auto)
+$mass = 2.6e6kg             # SLS Block 1 liftoff mass
+2600000kg
+$thrust = 3.9e7N            # total thrust
+3.90e+07N
+$a0 = $thrust / $mass
+15m/s^2
+$a0 / g
+1.53①
+$v-orbit = ^<7800 m/s>      # LEO orbital velocity
+7800m/s
+$t-ascent = ^<8 mins>       # ~8 minutes to orbit
+8min
+$v-orbit / $t-ascent        # acceleration all the way
+16.25m/s^2
+
+##Artemis-TransLunar (!auto)
+$delta-v = ^<3150 m/s>      # trans-lunar injection burn
+3150m/s
+$Isp = 450s                 # RL10 stage Specific Impulse
+00:07:30
+$v-exhaust = $Isp * g       # exhaust velocity
+4410m/s
+$v-exhaust / ^<600 mph>     # 16x the speed of sound
+16.45①
+$mass-ratio = exp +($delta-v / $v-exhaust)
+2.04
+$fuel-fraction = 1 - (1 / $mass-ratio)
+0.51
+$m0 = ^<100 tonne>          # example: 100tonne stage
+$fuel-mass = $m0 * $fuel-fraction
+51.02tonne
+
+##Artemis-Reentry (!auto)
+$mass = 26000kg             # Orion capsule mass
+26000kg
+$v-entry = ^<11000 m/s>     # lunar return velocity
+11000m/s
+$E-entry = 1/2 * $mass * $v-entry**2
+1.57e12J
+$E-entry.norm               # kinetic energy at entry
+1.57TJ
+$tnt = ?^<TNT in J/tonne>   # compare to TNT
+$TNT-equiv = $E-entry / $tnt in 'tonne'
+376tonne
+
+##Artemis-Heatshield (!auto)
+$radius = 2.5m
+2.5m
+$area = pi * $radius**2
+19.63m^2
+$E-area = $E-entry / $area  # energy per area
+8.0e10J/m^2
+$T = 2800ºC                 # peak temperature
+2800C
+$t-reentry = ^<1000 sec>    # reentry duration
+00:16:40
+$P-avg = $E-entry / $t-reentry
+1.57e9W
+$P-avg in MW                # average power dissipation
+1570MW
+$sigma = ^<5.67e-8 W.m-2.K-4>
+5.67e-08W/m^2.K^4
+$P-rad-area = $sigma * $T**4
+5060000W/m^2
+$P-rad = $P-rad-area * $area
+9.93e+07W
+$P_rad in MW                # total radiated power
+98MW

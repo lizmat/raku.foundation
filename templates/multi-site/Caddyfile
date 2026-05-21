@@ -6,8 +6,8 @@ cragcli.info {
 	reverse_proxy cragcli-info:3000
 }
 
-slangify.org {
-	reverse_proxy slangify-org:3000
+raku.foundation {
+	reverse_proxy raku-foundation:3000
 }
 
 play.slangify.org {

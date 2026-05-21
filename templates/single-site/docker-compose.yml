@@ -1,7 +1,7 @@
 services:
   webapp:
-    image: quay.io/librasteve/slangify-org:latest
-    container_name: slangify-org
+    image: quay.io/librasteve/raku-foundation:latest
+    container_name: raku-foundation
     expose:
       - "3000"
     networks:

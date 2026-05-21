@@ -1,6 +1,6 @@
 ## Purpose
 
-Define the CI/CD pipeline, Docker image build, and server deployment for slangify.org.
+Define the CI/CD pipeline, Docker image build, and server deployment for raku.foundation.
 
 ## Requirements
 
@@ -24,7 +24,7 @@ The build SHALL accept a `quay_expiration` build arg (default `never`) applied a
 
 ### Requirement: CI/CD pipeline
 
-On every push to `main`, GitHub Actions SHALL invoke `scripts/cibuild.sh container` to build and push the image to `quay.io/librasteve/slangify-org`. The workflow requires `QUAY_USERNAME` and `QUAY_PASSWORD` secrets.
+On every push to `main`, GitHub Actions SHALL invoke `scripts/cibuild.sh container` to build and push the image to `quay.io/librasteve/raku-foundation`. The workflow requires `QUAY_USERNAME` and `QUAY_PASSWORD` secrets.
 
 Both a versioned tag and `:latest` SHALL be pushed.
 
@@ -32,22 +32,22 @@ Both a versioned tag and `:latest` SHALL be pushed.
 
 - **WHEN** a commit is pushed to the `main` branch
 - **THEN** GitHub Actions builds the Docker image
-- **AND** pushes it to `quay.io/librasteve/slangify-org:latest`
+- **AND** pushes it to `quay.io/librasteve/raku-foundation:latest`
 
 ### Requirement: Multi-site server deployment
 
-The site SHALL be deployed as the `slangify-org` service in the multi-site `docker-compose.yml` (in `templates/multi-site/`). It SHALL:
-- Use image `quay.io/librasteve/slangify-org:latest`
+The site SHALL be deployed as the `raku-foundation` service in the multi-site `docker-compose.yml` (in `templates/multi-site/`). It SHALL:
+- Use image `quay.io/librasteve/raku-foundation:latest`
 - Expose internal port 3000 (no host port binding)
 - Be on the `webnet` network
 - Have `restart: unless-stopped`
 
-Caddy SHALL reverse-proxy `slangify.org { reverse_proxy slangify-org:3000 }` with automatic TLS.
+Caddy SHALL reverse-proxy `raku.foundation { reverse_proxy raku-foundation:3000 }` with automatic TLS.
 
 #### Scenario: Site is reachable via domain
 
 - **WHEN** the multi-site docker-compose stack is running
-- **THEN** `https://slangify.org` is served by the `slangify-org` container via Caddy
+- **THEN** `https://raku.foundation` is served by the `raku-foundation` container via Caddy
 - **AND** TLS is handled automatically by Caddy ACME
 
 ### Requirement: Auto-update from registry
@@ -56,5 +56,5 @@ The server SHALL poll `quay.io` for a new image every 15 minutes via `update-sit
 
 #### Scenario: New image is deployed automatically
 
-- **WHEN** a new image is pushed to `quay.io/librasteve/slangify-org:latest`
+- **WHEN** a new image is pushed to `quay.io/librasteve/raku-foundation:latest`
 - **THEN** within 15 minutes the server pulls the new image and restarts the container

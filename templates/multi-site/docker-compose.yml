@@ -17,9 +17,9 @@ services:
       - webnet
     restart: unless-stopped
 
-  slangify-org:
-    image: quay.io/librasteve/slangify-org:latest
-    container_name: slangify-org
+  raku-foundation:
+    image: quay.io/librasteve/raku-foundation:latest
+    container_name: raku-foundation
     expose:
       - "3000"
     networks:
@@ -74,7 +74,7 @@ services:
     depends_on:
       - harcstack-org
       - cragcli-info
-      - slangify-org
+      - raku-foundation
       - grammar-editor
     networks:
       - webnet

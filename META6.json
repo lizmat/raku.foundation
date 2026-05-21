@@ -13,7 +13,8 @@
     "provides": {
         "RakuFoundation": "lib/RakuFoundation.rakumod",
         "RakuFoundation::Home": "lib/RakuFoundation/Home.rakumod",
-        "RakuFoundation::HTML404": "lib/RakuFoundation/HTML404.rakumod"
+        "RakuFoundation::HTML404": "lib/RakuFoundation/HTML404.rakumod",
+        "RakuFoundation::MemberForm": "lib/RakuFoundation/MemberForm.rakumod"
     },
     "license": "Artistic-2.0",
     "source-url": "https://github.com/librasteve/raku.foundation.git"

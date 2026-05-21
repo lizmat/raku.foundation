@@ -22,11 +22,15 @@ class Member does Form is export {
         self.submit: -> Member $form {
             if $form.is-valid {
                 note "Member registration: $form.form-data()";
-                try {
-                    send-member-email($form);
-                    CATCH { default { note "SMTP error: $_" } }
+                start {
+                    my $mail = start {
+                        CATCH { default { note "SMTP error: $_" } }
+                        send-member-email($form)
+                    };
+                    await Promise.anyof($mail, Promise.in(30));
+                    note "SMTP: timed out after 30s" if $mail.status == Planned;
                 }
-                self.finish: '<b style="text-align:center"><em>Thank you — we will be in touch!</em></b>'
+                self.finish: '<p style="text-align:center"><em><u>Thank you — we will be in touch!</u></em></p>'
             }
             else {
                 self.retry: $form
@@ -38,17 +42,18 @@ class Member does Form is export {
 our $member is export = Member.empty;
 
 sub send-member-email(Member $form) {
-    my $host = %*ENV<SMTP_HOST> // 'smtp.gmail.com';
-    my $port = (%*ENV<SMTP_PORT> // '587').Int;
+    my $host = %*ENV<SMTP_HOST>;
+    my $port = %*ENV<SMTP_PORT> // 587;
     my $user = %*ENV<SMTP_USER>;
     my $pass = %*ENV<SMTP_PASS>;
     my $from = %*ENV<SMTP_FROM> // 'webserver@raku.foundation';
-    my $to   = %*ENV<SMTP_TO>  // 'librasteve@furnival.net';
+    my $to   = %*ENV<SMTP_TO>   // 'membershiplist@raku.foundation';
+    my $bcc  = %*ENV<SMTP_BCC>  // 'librasteve@furnival.net';
 
     my $message = qq:to/END/;
         From: $from
         To: $to
-        Subject: Raku Foundation — Member Registration Interest
+        Subject: The Raku Foundation — Member Registration Interest
 
         Name:  { $form.name }
         Nick:  { $form.nick // '(not provided)' }
@@ -57,6 +62,6 @@ sub send-member-email(Member $form) {
 
     my $smtp = Net::SMTP.new(:server($host), :$port);
     $smtp.auth($user, $pass);
-    $smtp.send($from, $to, $message);
+    $smtp.send("<$from>", ("<$to>", "<$bcc>"), $message);
     $smtp.quit;
 }

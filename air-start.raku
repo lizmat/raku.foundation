@@ -1,7 +1,7 @@
 #!/usr/bin/env raku
-use Slangify;
+use RakuFoundation;
 
 sub MAIN( :$host, :$port, :$scss, :$watch ) {
-    $Slangify::site.start:
+    $RakuFoundation::site.start:
           :$host, :$port, :$scss, :$watch;
 }

@@ -1,5 +1,5 @@
 use Test;
-use Slangify;
+use RakuFoundation;
 
 pass "replace me";
 

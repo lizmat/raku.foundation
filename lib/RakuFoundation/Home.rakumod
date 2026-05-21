@@ -76,15 +76,15 @@ sub home-page(&basepage, $shadow) is export {
                     The legal incorporation required the registration of an initial Executive
                     Board. The following Raku Community members have agreed to serve:
 
-                    - Elizabeth Mattijsen (_lizmat_)
+                     - Patrick Böker (_patrickb_)
 
-                    - Bruce Gray (_Util_)
+                     - Bruce Gray (_Util_)
 
-                    - Patrick Boeker (_patrickb_)
+                     - Richard Hainsworth (_finanalyst_)
 
-                    - Richard Hainsworth (_finanalyst_)
+                     - Elizabeth Mattijsen (_lizmat_)
 
-                    - Tadeusz Sośnierz (_tadzik_)
+                     - Tadeusz Sośnierz (_tadzik_)
 
                     END
                 ];

@@ -27,8 +27,6 @@ my &basepage = &page.assuming(
     ],
 );
 
-my @tools = [Analytics.new: :provider(Umami), :key<4464d54a-3dbe-4f79-8d45-1ef4f22cd677>,];
-
 my $shadow = background(
     :src</img/caterpillar-worm-psf-f0a4ab-small.png>,
     :top<160px>, :left<20vw>, :width<60vw>, :height<100vh>, :size<auto>,
@@ -55,5 +53,5 @@ $home.nav = $nav;
 our $site =
     site :register[Background.new, Dashboard.new, Panel.new, $member],
          :theme-color<green>, :bold-color<#0000F3>,
-         :@tools, :$html404,
+         :$html404,
          :pages[$home];

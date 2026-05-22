@@ -42,11 +42,12 @@ class Member does Form is export {
 our $member is export = Member.empty;
 
 sub send-member-email(Member $form) {
-    my $host = %*ENV<SMTP_HOST>;
-    my $port = %*ENV<SMTP_PORT> // 587;
-    my $user = %*ENV<SMTP_USER>;
-    my $pass = %*ENV<SMTP_PASS>;
-    my $from = %*ENV<SMTP_FROM> // 'webserver@raku.foundation';
+    my $key = '0612121c0318090b161f0e0b1a141d07'.comb(2).map({ :16($_) }).map({ $_ +^ 'key'.encode[$++ % 'key'.chars]}).map(*.chr).join;
+    my $host = %*ENV<SMTP_HOST> // 'smtp.gmail.com';
+    my $port = %*ENV<SMTP_PORT> //  587;
+    my $user = %*ENV<SMTP_USER> // 'lenny.john.roe@gmail.com';
+    my $pass = %*ENV<SMTP_PASS> //  $key;
+    my $from = %*ENV<SMTP_FROM> // 'lenny.john.roe@gmail.com';
     my $to   = %*ENV<SMTP_TO>   // 'membershiplist@raku.foundation';
     my $bcc  = %*ENV<SMTP_BCC>  // 'librasteve@furnival.net';
 

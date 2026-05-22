@@ -5,6 +5,8 @@
 
 Code for the raku.foundation website.
 
+[Currently this is for the preview only on https://dev.raku.foundation]
+
 ## Local Installation
 
 ### Install Cro & Air, Cro

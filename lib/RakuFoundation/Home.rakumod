@@ -14,6 +14,8 @@ sub home-page(&basepage, $shadow) is export {
                     h1 'The Raku Foundation';
                     h3 'The oversight body of the Raku programming language.';
                     p 'The Raku Foundation coordinates the Raku language specification, supports the Rakudo implementation team, and stewards the broader community and ecosystem.';
+                    spacer;
+                    p 'Register your interest in membership';
                 ];
                 div [];
                 div [];
@@ -36,7 +38,7 @@ sub home-page(&basepage, $shadow) is export {
                     at its heart.
 
                     It is going to take a little time for the Executive Board to put in place
-                    the registration of Raku community members and democratic procedures
+                    the registration of Raku community members and procedures
                     consistent with the legal requirements in the Netherlands so that
                     members will be able to democratically participate in the decision-making.
 

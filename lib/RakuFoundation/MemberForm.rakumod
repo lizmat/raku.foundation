@@ -6,15 +6,21 @@ use Air::Form;
 use Net::SMTP;
 
 class Member does Form is export {
-    has Str $.name  is validated(%va<names>) is required;
-    has Str $.nick  is validated(%va<name>);
-    has Str $.email is validated(%va<email>) is email is required;
+    has Str $.name          is validated(%va<names>) is required;
+    has Str $.nick          is validated(%va<name>);
+    has Str $.email         is validated(%va<email>) is email is required;
+    has Str $.captcha       is captcha(:label('captcha'));
+    has Str $.captcha-token is hidden;
 
     method do-form-attrs {
         self.form-attrs: {:submit-button-text('Register Interest')}
     }
 
-    method validate-form {}
+    method validate-form {
+        unless self.captcha-valid {
+            self.add-validation-error("Please answer the sequence question correctly")
+        }
+    }
 
     method form-routes {
         self.init;

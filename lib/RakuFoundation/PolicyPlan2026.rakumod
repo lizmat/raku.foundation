@@ -5,8 +5,10 @@ use Air::Base;
 
 sub policyplan2026(&basepage, $shadow) is export {
     basepage
-      main markdown q:to/END/;
-# Raku Foundation Policy Plan 2026
+      main
+        $shadow,
+        markdown q:to/END/;
+# Policy Plan 2026
 
 ## Bootstrapping is hard.
 
@@ -80,9 +82,9 @@ Obtaining funding is of course a constant process.
 
 An initial set of Regulations was already agreed upon by the Executive Board members to be.
 
- - https://lizmat.github.io/Raku-Foundation-Documents/RakuFoundationRegulations.html
- - https://lizmat.github.io/Raku-Foundation-Documents/RakuCodeOfConduct.html
- - https://lizmat.github.io/Raku-Foundation-Documents/RakuCATGuide.html
+ - [Foundation Regulations](https://lizmat.github.io/Raku-Foundation-Documents/RakuFoundationRegulations.html)
+ - [Code Of Conduct](https://lizmat.github.io/Raku-Foundation-Documents/RakuCodeOfConduct.html)
+ - [Incident Response Guide](https://lizmat.github.io/Raku-Foundation-Documents/RakuCATGuide.html)
 
 However, because the Articles of Association needed to be adapted to be acceptable by Dutch law, the Regulations will probably need tweaking before becoming accepted by the current Executive Board.
 
@@ -94,22 +96,22 @@ The Advisory Board will check on the functioning of The Raku Foundation in gener
 
 Quite a few web sites are currently hosted on hardware paid for by TPRF.  The Raku Foundation will take over this tab as soon as it is able to do so.  This currently applies to:
 
- - https://raku.org
- - https://docs.raku.org
- - https://planet.raku.org
- - https://cro.raku.org
- - https://rakudo.org
- - https://moarvm.org
+ - [raku.org](https://raku.org)
+ - [docs.raku.org](https://docs.raku.org)
+ - [planet.raku.org](https://planet.raku.org)
+ - [cro.raku.org](https://cro.raku.org)
+ - [rakudo.org](https://rakudo.org)
+ - [moarvm.org](https://moarvm.org)
 
 Furthermore, quite a few Raku related websites are currently hosted or paid for by individuals and small companies.  The Raku Foundation thanks these individuals and companies for their support and extends the invitation to have their websites hosted at the cost of The Raku Foundation should they so wish to.  This currently at least applies to:
 
- - https://raku.land
- - https://360.zef.pm
- - https://raku.guide
- - https://irclogs.raku.org
- - https://slangify.org
- - https://rakudoweekly.blog
- - https://raku-advent.blog
+ - [raku.land](https://raku.land)
+ - [360.zef.pm](https://360.zef.pm)
+ - [raku.guide](https://raku.guide)
+ - [irclogs.raku.org](https://irclogs.raku.org)
+ - [slangify.org](https://slangify.org)
+ - [rakudoweekly.blog](https://rakudoweekly.blog)
+ - [raku-advent.blog](https://raku-advent.blog)
 
 Furthermore it should be noted that all these websites are maintained and administered by volunteers.  The Raku Foundation thanks these individuals for their mostly invisible work!
 
@@ -118,6 +120,7 @@ Furthermore it should be noted that all these websites are maintained and admini
 Hosting a website can sometimes be done without incurring any additional costs.  But domain registrations typically need to be renewed once a year, and these are *real* costs.  The Raku Foundation will take over these costs whenever it is asked to do so for any recognized Raku Programming Language related website.
 
 ## Impressum
+
 ```
 Stichting Raku Foundation
 Bosstraat 15
@@ -127,7 +130,7 @@ Email: secretary@raku.foundation
 CoC: 42050836
 Tax: 869481277B01
 ANBI: (none yet, application soon)
-CBF: (none yet, application soon)
+CBF: (none yet, application in 2027)
 ```
 
 ### Executive Board
@@ -135,11 +138,11 @@ CBF: (none yet, application soon)
 In alphabetical order by last name:
 
  - Patrick Böker, Germany (patrickb)
- - Bruce Gray, USA (Util)*
+ - Bruce Gray, USA (Util)⁺
  - Richard Hainsworth, UK (finanalyst)
  - Elizabeth Mattijsen, The Netherlands (lizmat)
- - Tadeusz Sośnierz, Poland (tadzik)*
+ - Tadeusz Sośnierz, Poland (tadzik)⁺
 
-* Still being processed for official registration as board member of The Raku Foundation
+⁺Still being processed for official registration as board member of The Raku Foundation
 END
 }

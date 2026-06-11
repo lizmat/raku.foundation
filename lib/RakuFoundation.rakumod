@@ -23,7 +23,7 @@ my &basepage = &page.assuming(
       &nbsp;&amp;&nbsp;
       Styled by <a href="https://picocss.com" target="_blank">picocss</a>.
     |;
-    p safe 'Please report any issues with this site at <a href="https://github.com/Raku/raku.org" target="_blank">Raku/raku.org</a>.';
+    p safe 'Please report any issues with this site at <a href="https://github.com/Raku/raku.foundation" target="_blank">RakuFoundation/raku.foundation</a>.';
     p safe 'The Raku® Programming Language';
   ],
 );
@@ -38,21 +38,25 @@ my Page $home    = home-page      &basepage, $shadow;
 my Page $html404 = html404-page   &basepage, $shadow;
 my Page $pol2026 = policyplan2026 &basepage, $shadow;
 
-my Nav $nav =
-  nav(
-    logo => (
-      span a :href<https://raku.org>, :target<_self>, :style("display: flex; align-items: center; gap: 0.5rem; text-decoration: none;"),
-        [
-          img
-            :src</img/camelia-logo.png>, :width<60px>,
-            :title('Hi, my name is Camelia. I\'m the spokesbug for the Raku Programming Language. Raku has been developed by a team of dedicated and enthusiastic open source volunteers, and continues to be developed. You can help too. The only requirement is that you know how to be nice to all kinds of people (and butterflies).');
-          p :style("margin:0"),"Raku®";
-        ]
-      ),
-    :widgets[lightdark],
-  );
+my Nav $nav = nav
+  logo => (
+    span a :href<https://raku.org>, :target<_self>, :style("display: flex; align-items: center; gap: 0.5rem; text-decoration: none;"),
+    [
+      img
+        :src</img/camelia-logo.png>, :width<60px>,
+        :title('Hi, my name is Camelia. I\'m the spokesbug for the Raku Programming Language. Raku has been developed by a team of dedicated and enthusiastic open source volunteers, and continues to be developed. You can help too. The only requirement is that you know how to be nice to all kinds of people (and butterflies).');
+      p :style("margin:0"),"Raku Foundation";
+    ]
+  ),
+  :widgets[lightdark],
+  [
+    "Welcome"     => $home,
+    "Policy Plan" => $pol2026
+  ]
+;
 
-$home.nav = $nav;
+$home.nav   = $nav;
+$pol2026.nav = $nav;
 
 our $site = site
   :register(Background.new, LightDark.new, Dashboard.new, Panel.new, $member),

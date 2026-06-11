@@ -15,7 +15,8 @@
         "RakuFoundation": "lib/RakuFoundation.rakumod",
         "RakuFoundation::Home": "lib/RakuFoundation/Home.rakumod",
         "RakuFoundation::HTML404": "lib/RakuFoundation/HTML404.rakumod",
-        "RakuFoundation::MemberForm": "lib/RakuFoundation/MemberForm.rakumod"
+        "RakuFoundation::MemberForm": "lib/RakuFoundation/MemberForm.rakumod",
+        "RakuFoundation::PolicyPlan2026": "lib/RakuFoundation/PolicyPlan2026.rakumod"
     },
     "license": "Artistic-2.0",
     "source-url": "https://github.com/librasteve/raku.foundation.git"

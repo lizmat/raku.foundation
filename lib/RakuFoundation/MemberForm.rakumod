@@ -65,6 +65,7 @@ sub send-member-email(Member $form) {
 
         Name:  { $form.name }
         Nick:  { $form.nick // '(not provided)' }
+        Email: { $form.email }
         END
 
     my $smtp = Net::SMTP.new(:server($host), :$port);

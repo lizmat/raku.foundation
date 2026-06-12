@@ -18,7 +18,7 @@ my &basepage = &page.assuming(
             Hypered with <a href="https://htmx.org" target="_blank">htmx</a>.
             Aloft on <a href="https://harcstack.org" target="_blank"><b>&Aring;ir</b></a>.
             Constructed in <a href="https://cro.raku.org" target="_blank">cro</a>.
-            Written in <a href="https://raku.org" target="_blank">raku</a>.
+            Written in <a href="https://raku.org" target="_blank">Raku</a>.
             &nbsp;&amp;&nbsp;
             Styled by <a href="https://picocss.com" target="_blank">picocss</a>.
         |;

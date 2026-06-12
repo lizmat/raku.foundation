@@ -91,11 +91,11 @@ sub home-page(&basepage, $shadow) is export {
                     END
                 ];
                 panel [
-                    header h3 'Cyber Resiliance Act';
+                    header h3 'Cyber Resilience Act';
                     main markdown q:to/END/;
 
                     A driving motivation for the immediate formation of The Raku Foundation
-                    in a country in the European Union is the Cyber Resiliance Act, which
+                    in a country in the European Union is the Cyber Resilience Act, which
                     will make it mandatory for any software that is sold or licensed in the
                     European Union to define its dependencies, to have a mechanism for
                     reporting and fixing faults, and establishes legal responsibility for
@@ -104,7 +104,7 @@ sub home-page(&basepage, $shadow) is export {
                     category of entity called _Open-source software steward_.
 
                     END
-                    footer a('cra white paper →', :href<https://github.com/orcwg/orcwg/blob/main/cyber-resilience-sig/whitepapers/stewards-and-cra.md>, :target<_blank>);
+                    footer a('CRA white paper →', :href<https://github.com/orcwg/orcwg/blob/main/cyber-resilience-sig/whitepapers/stewards-and-cra.md>, :target<_blank>);
                 ];
                 panel [
                     header [ h3 'Language' ];

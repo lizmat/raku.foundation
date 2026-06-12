@@ -61,10 +61,10 @@ sub send-member-email(Member $form) {
         From: $from
         To: $to
         Subject: The Raku Foundation — Member Registration Interest
+        Email: { $form.email }
 
         Name:  { $form.name }
         Nick:  { $form.nick // '(not provided)' }
-        Email: { $form.email }
         END
 
     my $smtp = Net::SMTP.new(:server($host), :$port);

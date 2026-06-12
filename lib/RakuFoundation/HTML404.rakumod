@@ -1,9 +1,7 @@
-unit class HTML404;
-
 use Air::Functional :BASE;
 use Air::Base;
 
-sub html404-page(&basepage, $shadow) is export {
+my sub html404-page(&basepage, $shadow) is export {
 basepage
     main [
         $shadow;

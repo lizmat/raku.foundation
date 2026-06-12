@@ -1,21 +1,18 @@
-unit class RakuFoundation::Home;
-
 use Air::Functional :BASE;
 use Air::Base;
 use RakuFoundation::MemberForm;
 
-sub home-page(&basepage, $shadow) is export {
-  basepage
+my sub home-page(&basepage, $shadow) is export {
+  basepage :stub</>,
     main [
       $shadow;
       grid :grid-template-columns("1fr 2fr 1fr"), [
         div [];
         div :align<center>, [
-          h1 'The Raku Foundation';
-          h3 'The oversight body of the Raku programming language.';
+          h4 safe 'The oversight body of the<br>Raku Programming Language';
           p 'The Raku Foundation coordinates the Raku language specification, supports the Rakudo implementation team, and stewards the broader community and ecosystem.';
           spacer;
-          p 'Register your interest in membership';
+          p 'Please register your interest in membership';
         ];
         div [];
         div [];

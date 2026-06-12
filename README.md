@@ -5,7 +5,7 @@
 
 Code for the raku.foundation website.
 
-[Currently this is for the preview only on https://dev.raku.foundation]
+[Currently this main is on https://dev.raku.foundation and https://raku.foundation]
 
 ## Local Installation
 

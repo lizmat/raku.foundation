@@ -156,8 +156,8 @@ The Netherlands
 Email: secretary@raku.foundation
 CoC: 42050836
 Tax: 869481277B01
-ANBI: (none yet, application soon)
-CBF: (none yet, application in 2027)
+ANBI: (application soon)
+CBF: (application in 2027)
 ```
 
 ### Executive Board

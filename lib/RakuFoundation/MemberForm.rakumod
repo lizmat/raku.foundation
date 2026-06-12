@@ -58,7 +58,7 @@ sub send-member-email(Member $form) {
     my $bcc  = %*ENV<SMTP_BCC>  // 'librasteve@furnival.net';
 
     my $message = qq:to/END/;
-        From: $from
+        From: { $form.email }
         To: $to
         Subject: The Raku Foundation — Member Registration Interest
         Email: { $form.email }
